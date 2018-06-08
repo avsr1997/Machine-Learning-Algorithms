@@ -26,3 +26,9 @@ tree.export_graphviz(clf,out_file=dot_data,
                      impurity=False)
 graph=pydotplus.graph_from_dot_data(dot_data.getvalue())
 graph.write_pdf("iris_tree.pdf")                     
+
+# Training on KNearestNeighbors Classifier
+from sklearn.neighbors import KNeighborsClassifier
+myclassifier=KNeighborsClassifier()
+myclassifier.fit(train_data,train_target)
+myclassifier.predict(test_data)
